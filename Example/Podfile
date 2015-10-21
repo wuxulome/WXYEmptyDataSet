@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'WXYEmptyDataSet_Example', :exclusive => true do
+  pod "WXYEmptyDataSet", :path => "../"
+end
+
+target 'WXYEmptyDataSet_Tests', :exclusive => true do
+  pod "WXYEmptyDataSet", :path => "../"
+
+  pod 'FBSnapshotTestCase'
+end
