@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 
   s.homepage         = "https://github.com/wuxulome/WXYEmptyDataSet"
   s.license          = { :type => "MIT", :file => "LICENSE" }
-  s.author           = { "吴旭" => "wuxulome@gmail.com" }
+  s.author           = { "wuxu" => "wuxulome@gmail.com" }
   s.source           = { :git => "https://github.com/wuxulome/WXYEmptyDataSet.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '6.0'
