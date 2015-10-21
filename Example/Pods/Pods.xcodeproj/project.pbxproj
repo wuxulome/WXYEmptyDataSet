@@ -1,0 +1,1012 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05641CA17CACFE5B8552550B273E8E29 /* UIImage+Diff.m in Sources */ = {isa = PBXBuildFile; fileRef = E958CCA8EFD937541FD26335E67251C1 /* UIImage+Diff.m */; };
+		0740BB20051312F18CD094E677A7DE74 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0726A5263C202D8710B85F6A452A84E7 /* XCTest.framework */; };
+		1C3F541110B3FF558BE1DF15260477EC /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 48F2E079FFF63331D6826E1910DEA507 /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23A26D8AF22223FF411325DB223D7C7E /* WXYEmptyDataSet.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F72EF22582EF90CDA782197716673052 /* WXYEmptyDataSet.bundle */; };
+		3800F33CA50F8108C9A2D91859B8271B /* Pods-WXYEmptyDataSet_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 532C8CE41C79D17D7A093C08AE5C0792 /* Pods-WXYEmptyDataSet_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5070C5F3A0E05650E50511A5019CDD10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837C27D88A4AFD70C1AD242EED7A770F /* Foundation.framework */; };
+		5A16B9A3FBAF491F7DB6164FAFD635C3 /* Pods-WXYEmptyDataSet_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 287321613B9B79854CCCEFABEB55237D /* Pods-WXYEmptyDataSet_Example-dummy.m */; };
+		5A7F34859061ACC03E305CBF2AD5CCBD /* FBSnapshotTestController.h in Headers */ = {isa = PBXBuildFile; fileRef = 76635CFF3F3CFC2B7F61B39C5790051E /* FBSnapshotTestController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		617A51C82E47EA76A47E3DC97D1D1324 /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = 004D6828993F609CEA0485F2B5AD7A2D /* UIImage+Diff.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62B174F37AE68F761C433280F3979D94 /* Pods-WXYEmptyDataSet_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 441D262700128D51998213F094820CB9 /* Pods-WXYEmptyDataSet_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B6BE5E24BBA5E747CB3E8568F0BBED1 /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C155DE08A446E5CBA96E01BD9837380 /* UIImage+Compare.m */; };
+		72B873285E64510AECBD7892B49379B2 /* WXYEmptyDataSet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74EAA0238CF911B30BD0D5E7DB55DFB4 /* WXYEmptyDataSet-dummy.m */; };
+		7A01A06A862332B3A9624D74813127AF /* FBSnapshotTestCase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D85D2C9E66B60D57B22442FA1E8BF5A /* FBSnapshotTestCase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F88EB775B757FB8ACFEBC4CD0822CFC /* WXYEmptyDataSet-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9233D2636698E9CE8404C4226D5E5711 /* WXYEmptyDataSet-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9490A8B99B233129D90E9F9FD76CE924 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837C27D88A4AFD70C1AD242EED7A770F /* Foundation.framework */; };
+		A7F2CD3C9CA9ECB65280A1A8CBE39398 /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = 0990A80FAEEF96263E4D4B7C23F141E7 /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B48F4C81FF5C482B01A32C77D814BBC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837C27D88A4AFD70C1AD242EED7A770F /* Foundation.framework */; };
+		C602FE4E13B3515B0E5628F1CFD187FD /* Pods-WXYEmptyDataSet_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7EA29A01EC678B5188C7A4A7F5792A /* Pods-WXYEmptyDataSet_Tests-dummy.m */; };
+		CC103F0A1FAEECB36F49D43F5892AB30 /* FBSnapshotTestCase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB285966150ED0015FE88198FC2C105 /* FBSnapshotTestCase-dummy.m */; };
+		D1722862CAF52EA4BD1A2B7EBB2149B8 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A39CA6D0C9FCF15E058509A0C32A68 /* SwiftSupport.swift */; };
+		D64DE802AB225E38D0D24519D6133A0B /* FBSnapshotTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1155F26CDC09B6A730FF183C739C8205 /* FBSnapshotTestController.m */; };
+		DBBB8D5A9FD8BD85C5361651EC66925D /* FBSnapshotTestCasePlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEDE447FD5704DF090AF4E79BEE1BAE /* FBSnapshotTestCasePlatform.m */; };
+		DDF592D5600D076FEB8AD0FDCC94F74F /* FBSnapshotTestCasePlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = D3C5E5E99310F071DCFB9D9EF9CDE588 /* FBSnapshotTestCasePlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E48E37BC436516BB8813C79D373893A7 /* UIImage+Compare.h in Headers */ = {isa = PBXBuildFile; fileRef = 20B6CE9A52AD28D1DFD5A312B70674D3 /* UIImage+Compare.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60C57EBE81051450FD66753E9086E5D /* FBSnapshotTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F4C4EF7A458546C46B5A234FB32240 /* FBSnapshotTestCase.m */; };
+		F17B8CE9AE7D76ED2265D93E8E4DA1EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837C27D88A4AFD70C1AD242EED7A770F /* Foundation.framework */; };
+		F9FD7C75D37888F6A04C9F37075846EE /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6378E3179F8EB2229D3DB9C0DA8A6B4F /* ReplaceMe.m */; };
+		FC32B5050D8AFC24E34C3F4D93E917C3 /* UIImage+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = A188D99353271709247E75BEA4F3334A /* UIImage+Snapshot.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		080F2C8F156D8B2232590E5843E52BB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9B6684D692C7CE413D57D92C68F54BB;
+			remoteInfo = WXYEmptyDataSet;
+		};
+		0A3D41E1EC74F3376B41E0E9001491E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E21F56BB5D922CE9D68289ACB341610;
+			remoteInfo = "WXYEmptyDataSet-WXYEmptyDataSet";
+		};
+		27869B7CAA2D03D2B3745D72D4334B11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9158660075FA5224EF6545CAF2A8AD1;
+			remoteInfo = FBSnapshotTestCase;
+		};
+		5D41C6D9BE574BCEC1C98446E15D3F1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9B6684D692C7CE413D57D92C68F54BB;
+			remoteInfo = WXYEmptyDataSet;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		004D6828993F609CEA0485F2B5AD7A2D /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
+		0726A5263C202D8710B85F6A452A84E7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		095C9452908DC6AF52EBCA9DA2472160 /* Pods-WXYEmptyDataSet_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WXYEmptyDataSet_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		0990A80FAEEF96263E4D4B7C23F141E7 /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = FBSnapshotTestCase/FBSnapshotTestCase.h; sourceTree = "<group>"; };
+		0AB285966150ED0015FE88198FC2C105 /* FBSnapshotTestCase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBSnapshotTestCase-dummy.m"; sourceTree = "<group>"; };
+		0B312E38CCD8EC6CBF8E6541F81F03F5 /* Pods-WXYEmptyDataSet_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WXYEmptyDataSet_Example-frameworks.sh"; sourceTree = "<group>"; };
+		1155F26CDC09B6A730FF183C739C8205 /* FBSnapshotTestController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestController.m; path = FBSnapshotTestCase/FBSnapshotTestController.m; sourceTree = "<group>"; };
+		18FC53C45DED616EB6EA5CF5433B0FF5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C06C715A01DFF6839903360DA088715 /* WXYEmptyDataSet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WXYEmptyDataSet.xcconfig; sourceTree = "<group>"; };
+		1D85D2C9E66B60D57B22442FA1E8BF5A /* FBSnapshotTestCase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-umbrella.h"; sourceTree = "<group>"; };
+		20B6CE9A52AD28D1DFD5A312B70674D3 /* UIImage+Compare.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Compare.h"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.h"; sourceTree = "<group>"; };
+		221EEFF1087C94457F16DDF3DBBD7E05 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26F42F4A8A1FC1E12F0EE81B04E8B289 /* FBSnapshotTestCase-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "FBSnapshotTestCase-Private.xcconfig"; sourceTree = "<group>"; };
+		287321613B9B79854CCCEFABEB55237D /* Pods-WXYEmptyDataSet_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WXYEmptyDataSet_Example-dummy.m"; sourceTree = "<group>"; };
+		2B3E599BCD93970F5437D9C58B8DCE69 /* Pods-WXYEmptyDataSet_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WXYEmptyDataSet_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		2EEDE447FD5704DF090AF4E79BEE1BAE /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCasePlatform.m; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
+		36B9DB5EAE29E2722DBCAA8319FE5B60 /* Pods-WXYEmptyDataSet_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WXYEmptyDataSet_Example-resources.sh"; sourceTree = "<group>"; };
+		399E3388735C2DFE047F32E062500695 /* Pods-WXYEmptyDataSet_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WXYEmptyDataSet_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		39A39CA6D0C9FCF15E058509A0C32A68 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = FBSnapshotTestCase/SwiftSupport.swift; sourceTree = "<group>"; };
+		3EF80B409ADFF6E94D1ED9BBBB91E975 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		441D262700128D51998213F094820CB9 /* Pods-WXYEmptyDataSet_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WXYEmptyDataSet_Example-umbrella.h"; sourceTree = "<group>"; };
+		48E5CE06A9297E2E696C0AF9DD580B37 /* Pods_WXYEmptyDataSet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WXYEmptyDataSet_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48F2E079FFF63331D6826E1910DEA507 /* UIImage+Snapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Snapshot.h"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.h"; sourceTree = "<group>"; };
+		4BD2D026071D7FD2BE689CCD1D3B9EF6 /* FBSnapshotTestCase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FBSnapshotTestCase.modulemap; sourceTree = "<group>"; };
+		532C8CE41C79D17D7A093C08AE5C0792 /* Pods-WXYEmptyDataSet_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WXYEmptyDataSet_Tests-umbrella.h"; sourceTree = "<group>"; };
+		6378E3179F8EB2229D3DB9C0DA8A6B4F /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
+		6555CF30619CB9E0637D31C7013378A8 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D2345C127C1E7718D4F68F6AD6685E5 /* WXYEmptyDataSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WXYEmptyDataSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F7EA29A01EC678B5188C7A4A7F5792A /* Pods-WXYEmptyDataSet_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WXYEmptyDataSet_Tests-dummy.m"; sourceTree = "<group>"; };
+		74EAA0238CF911B30BD0D5E7DB55DFB4 /* WXYEmptyDataSet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WXYEmptyDataSet-dummy.m"; sourceTree = "<group>"; };
+		76635CFF3F3CFC2B7F61B39C5790051E /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = FBSnapshotTestCase/FBSnapshotTestController.h; sourceTree = "<group>"; };
+		767D8BFEF2EA89BC7443AA59CB00A31F /* Pods-WXYEmptyDataSet_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WXYEmptyDataSet_Tests-resources.sh"; sourceTree = "<group>"; };
+		837C27D88A4AFD70C1AD242EED7A770F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		89EC46504FFA02F7EA0718A6AF1C4C72 /* Pods_WXYEmptyDataSet_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WXYEmptyDataSet_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A4EC75CC216BCC0413AD2A4F2ED77B1 /* Pods-WXYEmptyDataSet_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WXYEmptyDataSet_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8C155DE08A446E5CBA96E01BD9837380 /* UIImage+Compare.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Compare.m"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.m"; sourceTree = "<group>"; };
+		8DB57739E04E7651CA726678A19782B0 /* Pods-WXYEmptyDataSet_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WXYEmptyDataSet_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9233D2636698E9CE8404C4226D5E5711 /* WXYEmptyDataSet-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WXYEmptyDataSet-umbrella.h"; sourceTree = "<group>"; };
+		A188D99353271709247E75BEA4F3334A /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
+		A48AFAE54A63F3C0079D07FF3DA2DA1C /* FBSnapshotTestCase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-prefix.pch"; sourceTree = "<group>"; };
+		ABBFB30F05A4EB2FE4F22CB71B966513 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B725CB0EAC3F78DB7CFA88D46B067665 /* Pods-WXYEmptyDataSet_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WXYEmptyDataSet_Example.release.xcconfig"; sourceTree = "<group>"; };
+		B89AB5ED6538557B320B93C0A6BDEF0C /* Pods-WXYEmptyDataSet_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WXYEmptyDataSet_Tests.modulemap"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D3C5E5E99310F071DCFB9D9EF9CDE588 /* FBSnapshotTestCasePlatform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCasePlatform.h; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.h; sourceTree = "<group>"; };
+		D4C1B03CB0966C12711B9BF39C4453BF /* WXYEmptyDataSet-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WXYEmptyDataSet-prefix.pch"; sourceTree = "<group>"; };
+		D83266195EBCDEB7899CE3AF11DCA22D /* Pods-WXYEmptyDataSet_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WXYEmptyDataSet_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		DE3C7418B7DA5FBBB6EE7C1D1D30D671 /* Pods-WXYEmptyDataSet_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WXYEmptyDataSet_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		E4610ED58434DE62D108CC38E4D6FB22 /* Pods-WXYEmptyDataSet_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WXYEmptyDataSet_Example.modulemap"; sourceTree = "<group>"; };
+		E6AEF9CC1794C216962A1A9DE2B1B8BF /* FBSnapshotTestCase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.xcconfig; sourceTree = "<group>"; };
+		E874A7A067151C9D5A51F7B62D2EE6A6 /* Pods-WXYEmptyDataSet_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WXYEmptyDataSet_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		E958CCA8EFD937541FD26335E67251C1 /* UIImage+Diff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Diff.m"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.m"; sourceTree = "<group>"; };
+		EDE2005E09F6F03D74DE3C9CB20D6A21 /* WXYEmptyDataSet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = WXYEmptyDataSet.modulemap; sourceTree = "<group>"; };
+		F72EF22582EF90CDA782197716673052 /* WXYEmptyDataSet.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WXYEmptyDataSet.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		F881C826FEDA778ECC143C734450F61D /* WXYEmptyDataSet-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "WXYEmptyDataSet-Private.xcconfig"; sourceTree = "<group>"; };
+		F9F4C4EF7A458546C46B5A234FB32240 /* FBSnapshotTestCase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCase.m; path = FBSnapshotTestCase/FBSnapshotTestCase.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27E997051E65DD97BC45514ADA31C44B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ADB45B93D4755A7754F854EF9223B4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B48F4C81FF5C482B01A32C77D814BBC9 /* Foundation.framework in Frameworks */,
+				0740BB20051312F18CD094E677A7DE74 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51F75B5071AD0F49FA63BFE7CF28755E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F17B8CE9AE7D76ED2265D93E8E4DA1EC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE95C1166F02D8A49F7DBE38BAAB7847 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9490A8B99B233129D90E9F9FD76CE924 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC88E16270181CD3B1856098EF42ABF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5070C5F3A0E05650E50511A5019CDD10 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				672D1320B537524AB3A5A6B59F3A0AB5 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49AC8B99BA1A9B51A09102B51907F55C /* Pods-WXYEmptyDataSet_Example */ = {
+			isa = PBXGroup;
+			children = (
+				3EF80B409ADFF6E94D1ED9BBBB91E975 /* Info.plist */,
+				E4610ED58434DE62D108CC38E4D6FB22 /* Pods-WXYEmptyDataSet_Example.modulemap */,
+				8DB57739E04E7651CA726678A19782B0 /* Pods-WXYEmptyDataSet_Example-acknowledgements.markdown */,
+				095C9452908DC6AF52EBCA9DA2472160 /* Pods-WXYEmptyDataSet_Example-acknowledgements.plist */,
+				287321613B9B79854CCCEFABEB55237D /* Pods-WXYEmptyDataSet_Example-dummy.m */,
+				0B312E38CCD8EC6CBF8E6541F81F03F5 /* Pods-WXYEmptyDataSet_Example-frameworks.sh */,
+				36B9DB5EAE29E2722DBCAA8319FE5B60 /* Pods-WXYEmptyDataSet_Example-resources.sh */,
+				441D262700128D51998213F094820CB9 /* Pods-WXYEmptyDataSet_Example-umbrella.h */,
+				2B3E599BCD93970F5437D9C58B8DCE69 /* Pods-WXYEmptyDataSet_Example.debug.xcconfig */,
+				B725CB0EAC3F78DB7CFA88D46B067665 /* Pods-WXYEmptyDataSet_Example.release.xcconfig */,
+			);
+			name = "Pods-WXYEmptyDataSet_Example";
+			path = "Target Support Files/Pods-WXYEmptyDataSet_Example";
+			sourceTree = "<group>";
+		};
+		4A323E5209015A652C10414885392F81 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				221EEFF1087C94457F16DDF3DBBD7E05 /* Info.plist */,
+				EDE2005E09F6F03D74DE3C9CB20D6A21 /* WXYEmptyDataSet.modulemap */,
+				1C06C715A01DFF6839903360DA088715 /* WXYEmptyDataSet.xcconfig */,
+				F881C826FEDA778ECC143C734450F61D /* WXYEmptyDataSet-Private.xcconfig */,
+				74EAA0238CF911B30BD0D5E7DB55DFB4 /* WXYEmptyDataSet-dummy.m */,
+				D4C1B03CB0966C12711B9BF39C4453BF /* WXYEmptyDataSet-prefix.pch */,
+				9233D2636698E9CE8404C4226D5E5711 /* WXYEmptyDataSet-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/WXYEmptyDataSet";
+			sourceTree = "<group>";
+		};
+		52AE899D8B5E82245C5406997506EDFD /* FBSnapshotTestCase */ = {
+			isa = PBXGroup;
+			children = (
+				78B8B06429C9DADE35340BE6C4B7C020 /* Core */,
+				ECB35126A6E5AC04DA6E5CFD5988508A /* Support Files */,
+				C0D3A88223D43E2EE28E545D73C4CC1C /* SwiftSupport */,
+			);
+			path = FBSnapshotTestCase;
+			sourceTree = "<group>";
+		};
+		585DB610AB7655B86DD8CE72AD5D5B99 /* WXYEmptyDataSet */ = {
+			isa = PBXGroup;
+			children = (
+				CB270BF50584CADDA6ECD3B853136260 /* Pod */,
+				4A323E5209015A652C10414885392F81 /* Support Files */,
+			);
+			name = WXYEmptyDataSet;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		672D1320B537524AB3A5A6B59F3A0AB5 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				837C27D88A4AFD70C1AD242EED7A770F /* Foundation.framework */,
+				0726A5263C202D8710B85F6A452A84E7 /* XCTest.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		767ED72175AF0A02C777944D8B06B051 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6378E3179F8EB2229D3DB9C0DA8A6B4F /* ReplaceMe.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		78B8B06429C9DADE35340BE6C4B7C020 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0990A80FAEEF96263E4D4B7C23F141E7 /* FBSnapshotTestCase.h */,
+				F9F4C4EF7A458546C46B5A234FB32240 /* FBSnapshotTestCase.m */,
+				D3C5E5E99310F071DCFB9D9EF9CDE588 /* FBSnapshotTestCasePlatform.h */,
+				2EEDE447FD5704DF090AF4E79BEE1BAE /* FBSnapshotTestCasePlatform.m */,
+				76635CFF3F3CFC2B7F61B39C5790051E /* FBSnapshotTestController.h */,
+				1155F26CDC09B6A730FF183C739C8205 /* FBSnapshotTestController.m */,
+				20B6CE9A52AD28D1DFD5A312B70674D3 /* UIImage+Compare.h */,
+				8C155DE08A446E5CBA96E01BD9837380 /* UIImage+Compare.m */,
+				004D6828993F609CEA0485F2B5AD7A2D /* UIImage+Diff.h */,
+				E958CCA8EFD937541FD26335E67251C1 /* UIImage+Diff.m */,
+				48F2E079FFF63331D6826E1910DEA507 /* UIImage+Snapshot.h */,
+				A188D99353271709247E75BEA4F3334A /* UIImage+Snapshot.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				DA37DB511C59D79EBD5F6EDD7CCD8519 /* Development Pods */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				FBD2D672921284E66F309CA3462F84D6 /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				AC1C241775CDC9058C1E055ECCB69F60 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		AC1C241775CDC9058C1E055ECCB69F60 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				49AC8B99BA1A9B51A09102B51907F55C /* Pods-WXYEmptyDataSet_Example */,
+				E1B8D215EE11860263F4196532E060FD /* Pods-WXYEmptyDataSet_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		C0D3A88223D43E2EE28E545D73C4CC1C /* SwiftSupport */ = {
+			isa = PBXGroup;
+			children = (
+				39A39CA6D0C9FCF15E058509A0C32A68 /* SwiftSupport.swift */,
+			);
+			name = SwiftSupport;
+			sourceTree = "<group>";
+		};
+		CB270BF50584CADDA6ECD3B853136260 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				767ED72175AF0A02C777944D8B06B051 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6555CF30619CB9E0637D31C7013378A8 /* FBSnapshotTestCase.framework */,
+				48E5CE06A9297E2E696C0AF9DD580B37 /* Pods_WXYEmptyDataSet_Example.framework */,
+				89EC46504FFA02F7EA0718A6AF1C4C72 /* Pods_WXYEmptyDataSet_Tests.framework */,
+				F72EF22582EF90CDA782197716673052 /* WXYEmptyDataSet.bundle */,
+				6D2345C127C1E7718D4F68F6AD6685E5 /* WXYEmptyDataSet.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA37DB511C59D79EBD5F6EDD7CCD8519 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				585DB610AB7655B86DD8CE72AD5D5B99 /* WXYEmptyDataSet */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		E1B8D215EE11860263F4196532E060FD /* Pods-WXYEmptyDataSet_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				18FC53C45DED616EB6EA5CF5433B0FF5 /* Info.plist */,
+				B89AB5ED6538557B320B93C0A6BDEF0C /* Pods-WXYEmptyDataSet_Tests.modulemap */,
+				8A4EC75CC216BCC0413AD2A4F2ED77B1 /* Pods-WXYEmptyDataSet_Tests-acknowledgements.markdown */,
+				D83266195EBCDEB7899CE3AF11DCA22D /* Pods-WXYEmptyDataSet_Tests-acknowledgements.plist */,
+				6F7EA29A01EC678B5188C7A4A7F5792A /* Pods-WXYEmptyDataSet_Tests-dummy.m */,
+				E874A7A067151C9D5A51F7B62D2EE6A6 /* Pods-WXYEmptyDataSet_Tests-frameworks.sh */,
+				767D8BFEF2EA89BC7443AA59CB00A31F /* Pods-WXYEmptyDataSet_Tests-resources.sh */,
+				532C8CE41C79D17D7A093C08AE5C0792 /* Pods-WXYEmptyDataSet_Tests-umbrella.h */,
+				DE3C7418B7DA5FBBB6EE7C1D1D30D671 /* Pods-WXYEmptyDataSet_Tests.debug.xcconfig */,
+				399E3388735C2DFE047F32E062500695 /* Pods-WXYEmptyDataSet_Tests.release.xcconfig */,
+			);
+			name = "Pods-WXYEmptyDataSet_Tests";
+			path = "Target Support Files/Pods-WXYEmptyDataSet_Tests";
+			sourceTree = "<group>";
+		};
+		ECB35126A6E5AC04DA6E5CFD5988508A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4BD2D026071D7FD2BE689CCD1D3B9EF6 /* FBSnapshotTestCase.modulemap */,
+				E6AEF9CC1794C216962A1A9DE2B1B8BF /* FBSnapshotTestCase.xcconfig */,
+				26F42F4A8A1FC1E12F0EE81B04E8B289 /* FBSnapshotTestCase-Private.xcconfig */,
+				0AB285966150ED0015FE88198FC2C105 /* FBSnapshotTestCase-dummy.m */,
+				A48AFAE54A63F3C0079D07FF3DA2DA1C /* FBSnapshotTestCase-prefix.pch */,
+				1D85D2C9E66B60D57B22442FA1E8BF5A /* FBSnapshotTestCase-umbrella.h */,
+				ABBFB30F05A4EB2FE4F22CB71B966513 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FBSnapshotTestCase";
+			sourceTree = "<group>";
+		};
+		FBD2D672921284E66F309CA3462F84D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				52AE899D8B5E82245C5406997506EDFD /* FBSnapshotTestCase */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AB3D2607AE63DA9258F35181FBE99AEA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62B174F37AE68F761C433280F3979D94 /* Pods-WXYEmptyDataSet_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD26DD44CDE88A66EE0E52CE5E6C9069 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3800F33CA50F8108C9A2D91859B8271B /* Pods-WXYEmptyDataSet_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9A10CAA5A82663AB27A4004873BA669 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A01A06A862332B3A9624D74813127AF /* FBSnapshotTestCase-umbrella.h in Headers */,
+				A7F2CD3C9CA9ECB65280A1A8CBE39398 /* FBSnapshotTestCase.h in Headers */,
+				DDF592D5600D076FEB8AD0FDCC94F74F /* FBSnapshotTestCasePlatform.h in Headers */,
+				5A7F34859061ACC03E305CBF2AD5CCBD /* FBSnapshotTestController.h in Headers */,
+				E48E37BC436516BB8813C79D373893A7 /* UIImage+Compare.h in Headers */,
+				617A51C82E47EA76A47E3DC97D1D1324 /* UIImage+Diff.h in Headers */,
+				1C3F541110B3FF558BE1DF15260477EC /* UIImage+Snapshot.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB5B7AB967E6F671387B58E041B9AD74 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F88EB775B757FB8ACFEBC4CD0822CFC /* WXYEmptyDataSet-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		18F7E6DB4A6F2A5B38F5B5B3D0E8FDE6 /* Pods-WXYEmptyDataSet_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8513A9E28CCBD492273F5EF27FDF2D79 /* Build configuration list for PBXNativeTarget "Pods-WXYEmptyDataSet_Example" */;
+			buildPhases = (
+				F705F24578B27F978C5F221B1477A50F /* Sources */,
+				51F75B5071AD0F49FA63BFE7CF28755E /* Frameworks */,
+				AB3D2607AE63DA9258F35181FBE99AEA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A83C105E21F053E4F6E7C9AD2B35F0C /* PBXTargetDependency */,
+			);
+			name = "Pods-WXYEmptyDataSet_Example";
+			productName = "Pods-WXYEmptyDataSet_Example";
+			productReference = 48E5CE06A9297E2E696C0AF9DD580B37 /* Pods_WXYEmptyDataSet_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		30D20895DA2AE77F46D8A614A5957F3F /* Pods-WXYEmptyDataSet_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69D3164C49D6688810989A7DB515A995 /* Build configuration list for PBXNativeTarget "Pods-WXYEmptyDataSet_Tests" */;
+			buildPhases = (
+				70A56161046ED8D04ABA1A69D3A92BA4 /* Sources */,
+				BC88E16270181CD3B1856098EF42ABF6 /* Frameworks */,
+				BD26DD44CDE88A66EE0E52CE5E6C9069 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE09F2B1CB9E6D3F665076E1A9DEF310 /* PBXTargetDependency */,
+				E4AAC14A06DEEFC5ECF31A2B79D38169 /* PBXTargetDependency */,
+			);
+			name = "Pods-WXYEmptyDataSet_Tests";
+			productName = "Pods-WXYEmptyDataSet_Tests";
+			productReference = 89EC46504FFA02F7EA0718A6AF1C4C72 /* Pods_WXYEmptyDataSet_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7E21F56BB5D922CE9D68289ACB341610 /* WXYEmptyDataSet-WXYEmptyDataSet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 356A519111F8AA7A09330C25C2280D10 /* Build configuration list for PBXNativeTarget "WXYEmptyDataSet-WXYEmptyDataSet" */;
+			buildPhases = (
+				87FBDE62DF8EA27C97CE29AC0D1CDC7F /* Sources */,
+				27E997051E65DD97BC45514ADA31C44B /* Frameworks */,
+				C2A4C13AE87B131A9EE2FBFBAA9F2FD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WXYEmptyDataSet-WXYEmptyDataSet";
+			productName = "WXYEmptyDataSet-WXYEmptyDataSet";
+			productReference = F72EF22582EF90CDA782197716673052 /* WXYEmptyDataSet.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		C9B6684D692C7CE413D57D92C68F54BB /* WXYEmptyDataSet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D420858C68FE6CBE27AEA94A0EA2ED71 /* Build configuration list for PBXNativeTarget "WXYEmptyDataSet" */;
+			buildPhases = (
+				B4802A3E811EE2738BD601085EF73CE1 /* Sources */,
+				AE95C1166F02D8A49F7DBE38BAAB7847 /* Frameworks */,
+				E336E7614419FFF6CF40220210C5E0B6 /* Resources */,
+				CB5B7AB967E6F671387B58E041B9AD74 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4622ABB6686F50E0E5597692D76ECABE /* PBXTargetDependency */,
+			);
+			name = WXYEmptyDataSet;
+			productName = WXYEmptyDataSet;
+			productReference = 6D2345C127C1E7718D4F68F6AD6685E5 /* WXYEmptyDataSet.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D9158660075FA5224EF6545CAF2A8AD1 /* FBSnapshotTestCase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0FF958B30A8EF72FF7FE8FD3AA68F7A /* Build configuration list for PBXNativeTarget "FBSnapshotTestCase" */;
+			buildPhases = (
+				5ED58AB920469146654D62D777010C88 /* Sources */,
+				4ADB45B93D4755A7754F854EF9223B4A /* Frameworks */,
+				C9A10CAA5A82663AB27A4004873BA669 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FBSnapshotTestCase;
+			productName = FBSnapshotTestCase;
+			productReference = 6555CF30619CB9E0637D31C7013378A8 /* FBSnapshotTestCase.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D9158660075FA5224EF6545CAF2A8AD1 /* FBSnapshotTestCase */,
+				18F7E6DB4A6F2A5B38F5B5B3D0E8FDE6 /* Pods-WXYEmptyDataSet_Example */,
+				30D20895DA2AE77F46D8A614A5957F3F /* Pods-WXYEmptyDataSet_Tests */,
+				C9B6684D692C7CE413D57D92C68F54BB /* WXYEmptyDataSet */,
+				7E21F56BB5D922CE9D68289ACB341610 /* WXYEmptyDataSet-WXYEmptyDataSet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C2A4C13AE87B131A9EE2FBFBAA9F2FD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E336E7614419FFF6CF40220210C5E0B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23A26D8AF22223FF411325DB223D7C7E /* WXYEmptyDataSet.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5ED58AB920469146654D62D777010C88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC103F0A1FAEECB36F49D43F5892AB30 /* FBSnapshotTestCase-dummy.m in Sources */,
+				E60C57EBE81051450FD66753E9086E5D /* FBSnapshotTestCase.m in Sources */,
+				DBBB8D5A9FD8BD85C5361651EC66925D /* FBSnapshotTestCasePlatform.m in Sources */,
+				D64DE802AB225E38D0D24519D6133A0B /* FBSnapshotTestController.m in Sources */,
+				D1722862CAF52EA4BD1A2B7EBB2149B8 /* SwiftSupport.swift in Sources */,
+				6B6BE5E24BBA5E747CB3E8568F0BBED1 /* UIImage+Compare.m in Sources */,
+				05641CA17CACFE5B8552550B273E8E29 /* UIImage+Diff.m in Sources */,
+				FC32B5050D8AFC24E34C3F4D93E917C3 /* UIImage+Snapshot.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70A56161046ED8D04ABA1A69D3A92BA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C602FE4E13B3515B0E5628F1CFD187FD /* Pods-WXYEmptyDataSet_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87FBDE62DF8EA27C97CE29AC0D1CDC7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4802A3E811EE2738BD601085EF73CE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9FD7C75D37888F6A04C9F37075846EE /* ReplaceMe.m in Sources */,
+				72B873285E64510AECBD7892B49379B2 /* WXYEmptyDataSet-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F705F24578B27F978C5F221B1477A50F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A16B9A3FBAF491F7DB6164FAFD635C3 /* Pods-WXYEmptyDataSet_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A83C105E21F053E4F6E7C9AD2B35F0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WXYEmptyDataSet;
+			target = C9B6684D692C7CE413D57D92C68F54BB /* WXYEmptyDataSet */;
+			targetProxy = 080F2C8F156D8B2232590E5843E52BB7 /* PBXContainerItemProxy */;
+		};
+		4622ABB6686F50E0E5597692D76ECABE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "WXYEmptyDataSet-WXYEmptyDataSet";
+			target = 7E21F56BB5D922CE9D68289ACB341610 /* WXYEmptyDataSet-WXYEmptyDataSet */;
+			targetProxy = 0A3D41E1EC74F3376B41E0E9001491E9 /* PBXContainerItemProxy */;
+		};
+		AE09F2B1CB9E6D3F665076E1A9DEF310 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FBSnapshotTestCase;
+			target = D9158660075FA5224EF6545CAF2A8AD1 /* FBSnapshotTestCase */;
+			targetProxy = 27869B7CAA2D03D2B3745D72D4334B11 /* PBXContainerItemProxy */;
+		};
+		E4AAC14A06DEEFC5ECF31A2B79D38169 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WXYEmptyDataSet;
+			target = C9B6684D692C7CE413D57D92C68F54BB /* WXYEmptyDataSet */;
+			targetProxy = 5D41C6D9BE574BCEC1C98446E15D3F1D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		02692CCFEFC12C4F08AFFA88D418600E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F881C826FEDA778ECC143C734450F61D /* WXYEmptyDataSet-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/WXYEmptyDataSet/WXYEmptyDataSet-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WXYEmptyDataSet/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/WXYEmptyDataSet/WXYEmptyDataSet.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = WXYEmptyDataSet;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		03CA91998D6773EC5D02B3DB87B8353E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0B57334D6C23DADAA4F7D802A5760EB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		0CA6A237B8CC66BD7DB1BBBC1ABA727E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F881C826FEDA778ECC143C734450F61D /* WXYEmptyDataSet-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/WXYEmptyDataSet/WXYEmptyDataSet-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WXYEmptyDataSet/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/WXYEmptyDataSet/WXYEmptyDataSet.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = WXYEmptyDataSet;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		12E8150E7EE664F398E9CD39D5054507 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B3E599BCD93970F5437D9C58B8DCE69 /* Pods-WXYEmptyDataSet_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-WXYEmptyDataSet_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-WXYEmptyDataSet_Example/Pods-WXYEmptyDataSet_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_WXYEmptyDataSet_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		51DA2599E94427D3062BE74979D32623 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26F42F4A8A1FC1E12F0EE81B04E8B289 /* FBSnapshotTestCase-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2.0.5;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 2;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FBSnapshotTestCase/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FBSnapshotTestCase;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		553557C940FBFF9F65DB6617205C69EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F881C826FEDA778ECC143C734450F61D /* WXYEmptyDataSet-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = WXYEmptyDataSet;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		57C7CCBAF3A9D5AEBC70776F11897362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F881C826FEDA778ECC143C734450F61D /* WXYEmptyDataSet-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = WXYEmptyDataSet;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		7323BCAD0BA88503244AFCAA00ECB125 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26F42F4A8A1FC1E12F0EE81B04E8B289 /* FBSnapshotTestCase-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2.0.5;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 2;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FBSnapshotTestCase/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FBSnapshotTestCase;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		83E634164F97A2685193ED9FD86F5E5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE3C7418B7DA5FBBB6EE7C1D1D30D671 /* Pods-WXYEmptyDataSet_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-WXYEmptyDataSet_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-WXYEmptyDataSet_Tests/Pods-WXYEmptyDataSet_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_WXYEmptyDataSet_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D6838FEFA2D59C04FDBDF2645DA3961D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 399E3388735C2DFE047F32E062500695 /* Pods-WXYEmptyDataSet_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-WXYEmptyDataSet_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-WXYEmptyDataSet_Tests/Pods-WXYEmptyDataSet_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_WXYEmptyDataSet_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DEBC8B2D5C344DDB4FF113B8F3B05B6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B725CB0EAC3F78DB7CFA88D46B067665 /* Pods-WXYEmptyDataSet_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-WXYEmptyDataSet_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-WXYEmptyDataSet_Example/Pods-WXYEmptyDataSet_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_WXYEmptyDataSet_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B57334D6C23DADAA4F7D802A5760EB2 /* Debug */,
+				03CA91998D6773EC5D02B3DB87B8353E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		356A519111F8AA7A09330C25C2280D10 /* Build configuration list for PBXNativeTarget "WXYEmptyDataSet-WXYEmptyDataSet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				553557C940FBFF9F65DB6617205C69EB /* Debug */,
+				57C7CCBAF3A9D5AEBC70776F11897362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69D3164C49D6688810989A7DB515A995 /* Build configuration list for PBXNativeTarget "Pods-WXYEmptyDataSet_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83E634164F97A2685193ED9FD86F5E5D /* Debug */,
+				D6838FEFA2D59C04FDBDF2645DA3961D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8513A9E28CCBD492273F5EF27FDF2D79 /* Build configuration list for PBXNativeTarget "Pods-WXYEmptyDataSet_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12E8150E7EE664F398E9CD39D5054507 /* Debug */,
+				DEBC8B2D5C344DDB4FF113B8F3B05B6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D420858C68FE6CBE27AEA94A0EA2ED71 /* Build configuration list for PBXNativeTarget "WXYEmptyDataSet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CA6A237B8CC66BD7DB1BBBC1ABA727E /* Debug */,
+				02692CCFEFC12C4F08AFFA88D418600E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0FF958B30A8EF72FF7FE8FD3AA68F7A /* Build configuration list for PBXNativeTarget "FBSnapshotTestCase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51DA2599E94427D3062BE74979D32623 /* Debug */,
+				7323BCAD0BA88503244AFCAA00ECB125 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

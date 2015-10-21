@@ -1,0 +1,25 @@
+{
+  "name": "WXYEmptyDataSet",
+  "version": "0.1.0",
+  "summary": "A short description of WXYEmptyDataSet.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/WXYEmptyDataSet",
+  "license": "MIT",
+  "authors": {
+    "吴旭": "wuxulome@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/WXYEmptyDataSet.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "WXYEmptyDataSet": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}

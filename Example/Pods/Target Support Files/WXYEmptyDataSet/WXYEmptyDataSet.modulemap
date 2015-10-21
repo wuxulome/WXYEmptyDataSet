@@ -1,0 +1,6 @@
+framework module WXYEmptyDataSet {
+  umbrella header "WXYEmptyDataSet-umbrella.h"
+
+  export *
+  module * { export * }
+}
