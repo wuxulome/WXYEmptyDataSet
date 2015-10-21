@@ -7,12 +7,19 @@
 //
 
 #import "WXYAppDelegate.h"
+#import "WXYViewController.h"
 
 @implementation WXYAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    WXYViewController *controller = [[WXYViewController alloc] init];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = controller;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

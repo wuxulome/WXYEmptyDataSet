@@ -1,9 +1,5 @@
 PODS:
-  - FBSnapshotTestCase (2.0.5):
-    - FBSnapshotTestCase/SwiftSupport (= 2.0.5)
-  - FBSnapshotTestCase/Core (2.0.5)
-  - FBSnapshotTestCase/SwiftSupport (2.0.5):
-    - FBSnapshotTestCase/Core
+  - FBSnapshotTestCase (1.6)
   - WXYEmptyDataSet (0.1.0)
 
 DEPENDENCIES:
@@ -15,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: 6917deb01d0556dd544536f9eb34e0cf26f904d5
-  WXYEmptyDataSet: 7147a77e19344a0d26eabda3808a2dca5fcad80e
+  FBSnapshotTestCase: 9d5fe43b29ae3a0ed8fc829477971b281038f748
+  WXYEmptyDataSet: e6c10e125e92acee304e29efbf99ecbe784c811c
 
 COCOAPODS: 0.38.2

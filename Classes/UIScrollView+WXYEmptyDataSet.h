@@ -1,6 +1,6 @@
 //
-//  WXYViewController.h
-//  WXYEmptyDataSet
+//  UIScrollView+WXYEmptyDataSet.h
+//  Pods
 //
 //  Created by 吴旭 on 10/21/2015.
 //  Copyright (c) 2015 吴旭. All rights reserved.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WXYViewController : UIViewController
+@interface UIScrollView (WXYEmptyDataSet)
 
 @end

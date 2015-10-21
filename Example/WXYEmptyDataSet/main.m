@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 吴旭. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 #import "WXYAppDelegate.h"
 
 int main(int argc, char * argv[])
