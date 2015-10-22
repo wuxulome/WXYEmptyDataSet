@@ -79,6 +79,12 @@
 - (void)wxy_setEmptyWithView:(UIView *)view attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail;
 - (void)wxy_setEmptyWithView:(UIView *)view attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail reload:(void (^)(void))reload;
 
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)title button:(UIButton *)button;
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail button:(UIButton *)button;
+- (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title button:(UIButton *)button;
+- (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail button:(UIButton *)button;
+- (void)wxy_setEmptyWithView:(UIView *)view attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail button:(UIButton *)button;
+
 #pragma mark -
 
 - (BOOL)wxy_startReload;
