@@ -13,10 +13,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    WXYViewController *controller = [[WXYViewController alloc] init];
+    WXYViewController *controller = [[WXYViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = controller;
+    self.window.rootViewController = nav;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     

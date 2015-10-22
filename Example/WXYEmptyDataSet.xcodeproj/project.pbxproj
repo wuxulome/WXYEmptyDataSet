@@ -21,7 +21,8 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		B8CE30A7517C5E98D0B022BB /* Pods_WXYEmptyDataSet_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8FD1BBC6964CFFCBDF10C9 /* Pods_WXYEmptyDataSet_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		C2C32B091BD7367100EB1C05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C32B081BD7367100EB1C05 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		C2AE5F471BD8C14A00957486 /* WXYShowStyleController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AE5F461BD8C14A00957486 /* WXYShowStyleController.m */; };
+		C2C32B091BD7367100EB1C05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C32B081BD7367100EB1C05 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		7D1C1B22CFE02237AFFAFD78 /* Pods-WXYEmptyDataSet_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXYEmptyDataSet_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WXYEmptyDataSet_Tests/Pods-WXYEmptyDataSet_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA6E785894B05A6D9628465E /* Pods-WXYEmptyDataSet_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXYEmptyDataSet_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WXYEmptyDataSet_Example/Pods-WXYEmptyDataSet_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		C2AE5F451BD8C14A00957486 /* WXYShowStyleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYShowStyleController.h; sourceTree = "<group>"; };
+		C2AE5F461BD8C14A00957486 /* WXYShowStyleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYShowStyleController.m; sourceTree = "<group>"; };
 		C2C32B081BD7367100EB1C05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4CB11325C3B0CDEEE87FEEF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DB8FD1BBC6964CFFCBDF10C9 /* Pods_WXYEmptyDataSet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WXYEmptyDataSet_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +134,8 @@
 				6003F59D195388D20070C39A /* WXYAppDelegate.m */,
 				6003F5A5195388D20070C39A /* WXYViewController.h */,
 				6003F5A6195388D20070C39A /* WXYViewController.m */,
+				C2AE5F451BD8C14A00957486 /* WXYShowStyleController.h */,
+				C2AE5F461BD8C14A00957486 /* WXYShowStyleController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				C2C32B081BD7367100EB1C05 /* LaunchScreen.storyboard */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -385,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* WXYAppDelegate.m in Sources */,
+				C2AE5F471BD8C14A00957486 /* WXYShowStyleController.m in Sources */,
 				6003F5A7195388D20070C39A /* WXYViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

@@ -14,7 +14,7 @@ static NSInteger const wxy_titleLabel_tag    = 92012;
 static NSInteger const wxy_detailLabel_tag   = 92013;
 static NSInteger const wxy_indicatorView_tag = 92014;
 
-static char const *const wxy_reloadBlockKey = "wxy_reloadBlock";
+static char const *const wxy_reloadBlockKey       = "wxy_reloadBlock";
 static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
 
 @implementation UIScrollView (WXYEmptyDataSet)
@@ -24,6 +24,10 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
 @dynamic wxy_detailFont;
 @dynamic wxy_detailColor;
 @dynamic wxy_detailFontSize;
+@dynamic wxy_wholeVerticalOffset;
+@dynamic wxy_wholeInsets;
+@dynamic wxy_imageToTitleSpacing;
+@dynamic wxy_titleToDetailSpacing;
 
 #pragma mark -
 
@@ -111,6 +115,10 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
     
     if (view) {
         height += CGRectGetHeight(view.frame);
+        
+        if (title.length > 0 || detail.length > 0) {
+            height += [self wxy_imageToTitleSpacing];
+        }
     }
     
     CGSize titleTextSize;
@@ -119,17 +127,24 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
                           constrainedToSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT)
                               lineBreakMode:NSLineBreakByWordWrapping];
         height += titleTextSize.height;
+        
+        if (detail.length > 0) {
+            height += [self wxy_titleToDetailSpacing];
+        }
     }
     
     CGSize detailTextSize;
     if (detail.length > 0) {
-        CGSize detailTextSize = [detail sizeWithFont:[UIFont systemFontOfSize:[self wxy_detailFontSize]]
+        detailTextSize = [detail sizeWithFont:[UIFont systemFontOfSize:[self wxy_detailFontSize]]
                                    constrainedToSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT)
                                        lineBreakMode:NSLineBreakByWordWrapping];
         height += detailTextSize.height;
     }
     
-    UIView *mainBgView = [[UIView alloc] initWithFrame:CGRectMake(0, (CGRectGetHeight(self.frame)-height)/2, CGRectGetWidth(self.frame), height)];
+    UIView *mainBgView = [[UIView alloc] initWithFrame:CGRectMake([self wxy_wholeInsets].left,
+                                                                  (CGRectGetHeight(self.frame) - height)/2 + [self wxy_wholeVerticalOffset],
+                                                                  CGRectGetWidth(self.frame) - [self wxy_wholeInsets].left - [self wxy_wholeInsets].right,
+                                                                  height)];
     mainBgView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
     mainBgView.backgroundColor = [UIColor clearColor];
     mainBgView.tag = wxy_mainBgView_tag;
@@ -183,47 +198,47 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
 
 #pragma mark -
 
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedtitle
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedTitle
 {
-    [self wxy_setEmptyWithAttributedTitle:attributedtitle attributedDetail:nil view:nil reload:nil];
+    [self wxy_setEmptyWithAttributedTitle:attributedTitle attributedDetail:nil view:nil reload:nil];
 }
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedtitle reload:(void (^)(void))reload
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedTitle reload:(void (^)(void))reload
 {
-    [self wxy_setEmptyWithAttributedTitle:attributedtitle attributedDetail:nil view:nil reload:reload];
-}
-
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedtitle attributedDetail:(NSAttributedString *)attributedDetail
-{
-    [self wxy_setEmptyWithAttributedTitle:attributedtitle attributedDetail:attributedDetail view:nil reload:nil];
-}
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedtitle attributedDetail:(NSAttributedString *)attributedDetail reload:(void (^)(void))reload
-{
-    [self wxy_setEmptyWithAttributedTitle:attributedtitle attributedDetail:attributedDetail view:nil reload:reload];
+    [self wxy_setEmptyWithAttributedTitle:attributedTitle attributedDetail:nil view:nil reload:reload];
 }
 
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedtitle image:(UIImage *)image
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedTitle attributedDetail:(NSAttributedString *)attributedDetail
 {
-    [self wxy_setEmptyWithAttributedTitle:attributedtitle attributedDetail:nil image:image reload:nil];
+    [self wxy_setEmptyWithAttributedTitle:attributedTitle attributedDetail:attributedDetail view:nil reload:nil];
 }
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedtitle image:(UIImage *)image reload:(void (^)(void))reload
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedTitle attributedDetail:(NSAttributedString *)attributedDetail reload:(void (^)(void))reload
 {
-    [self wxy_setEmptyWithAttributedTitle:attributedtitle attributedDetail:nil image:image reload:reload];
-}
-
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedtitle view:(UIView *)view
-{
-    [self wxy_setEmptyWithAttributedTitle:attributedtitle attributedDetail:nil view:view reload:nil];
-}
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedtitle view:(UIView *)view reload:(void (^)(void))reload
-{
-    [self wxy_setEmptyWithAttributedTitle:attributedtitle attributedDetail:nil view:view reload:reload];
+    [self wxy_setEmptyWithAttributedTitle:attributedTitle attributedDetail:attributedDetail view:nil reload:reload];
 }
 
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedtitle attributedDetail:(NSAttributedString *)attributedDetail image:(UIImage *)image
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedTitle image:(UIImage *)image
 {
-    [self wxy_setEmptyWithAttributedTitle:attributedtitle attributedDetail:attributedDetail image:image reload:nil];
+    [self wxy_setEmptyWithAttributedTitle:attributedTitle attributedDetail:nil image:image reload:nil];
 }
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedtitle attributedDetail:(NSAttributedString *)attributedDetail image:(UIImage *)image reload:(void (^)(void))reload
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedTitle image:(UIImage *)image reload:(void (^)(void))reload
+{
+    [self wxy_setEmptyWithAttributedTitle:attributedTitle attributedDetail:nil image:image reload:reload];
+}
+
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedTitle view:(UIView *)view
+{
+    [self wxy_setEmptyWithAttributedTitle:attributedTitle attributedDetail:nil view:view reload:nil];
+}
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedTitle view:(UIView *)view reload:(void (^)(void))reload
+{
+    [self wxy_setEmptyWithAttributedTitle:attributedTitle attributedDetail:nil view:view reload:reload];
+}
+
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedTitle attributedDetail:(NSAttributedString *)attributedDetail image:(UIImage *)image
+{
+    [self wxy_setEmptyWithAttributedTitle:attributedTitle attributedDetail:attributedDetail image:image reload:nil];
+}
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedTitle attributedDetail:(NSAttributedString *)attributedDetail image:(UIImage *)image reload:(void (^)(void))reload
 {
     if (image) {
         UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
@@ -231,17 +246,17 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.backgroundColor = [UIColor clearColor];
         
-        [self wxy_setEmptyWithAttributedTitle:attributedtitle attributedDetail:attributedDetail view:imageView reload:reload];
+        [self wxy_setEmptyWithAttributedTitle:attributedTitle attributedDetail:attributedDetail view:imageView reload:reload];
     } else {
-        [self wxy_setEmptyWithAttributedTitle:attributedtitle attributedDetail:attributedDetail view:nil reload:reload];
+        [self wxy_setEmptyWithAttributedTitle:attributedTitle attributedDetail:attributedDetail view:nil reload:reload];
     }
 }
 
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedtitle attributedDetail:(NSAttributedString *)attributedDetail view:(UIView *)view
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedTitle attributedDetail:(NSAttributedString *)attributedDetail view:(UIView *)view
 {
-    [self wxy_setEmptyWithAttributedTitle:attributedtitle attributedDetail:attributedDetail view:view reload:nil];
+    [self wxy_setEmptyWithAttributedTitle:attributedTitle attributedDetail:attributedDetail view:view reload:nil];
 }
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedtitle attributedDetail:(NSAttributedString *)attributedDetail view:(UIView *)view reload:(void (^)(void))reload
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)attributedTitle attributedDetail:(NSAttributedString *)attributedDetail view:(UIView *)view reload:(void (^)(void))reload
 {
     [self wxy_clearBackground];
     
@@ -249,14 +264,22 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
     
     if (view) {
         height += CGRectGetHeight(view.frame);
+        
+        if (attributedTitle.length > 0 || attributedDetail.length > 0) {
+            height += [self wxy_imageToTitleSpacing];
+        }
     }
     
     CGRect titleTextRect;
-    if (attributedtitle.length > 0) {
-        titleTextRect = [attributedtitle boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT)
+    if (attributedTitle.length > 0) {
+        titleTextRect = [attributedTitle boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT)
                                                       options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
                                                       context:nil];
         height += titleTextRect.size.height;
+        
+        if (attributedDetail.length > 0) {
+            height += [self wxy_titleToDetailSpacing];
+        }
     }
     
     CGRect detailTextRect;
@@ -267,7 +290,10 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
         height += detailTextRect.size.height;
     }
     
-    UIView *mainBgView = [[UIView alloc] initWithFrame:CGRectMake(0, (CGRectGetHeight(self.frame)-height)/2, CGRectGetWidth(self.frame), height)];
+    UIView *mainBgView = [[UIView alloc] initWithFrame:CGRectMake([self wxy_wholeInsets].left,
+                                                                  (CGRectGetHeight(self.frame) - height)/2 + [self wxy_wholeVerticalOffset],
+                                                                  CGRectGetWidth(self.frame) - [self wxy_wholeInsets].left - [self wxy_wholeInsets].right,
+                                                                  height)];
     mainBgView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
     mainBgView.backgroundColor = [UIColor clearColor];
     mainBgView.tag = wxy_mainBgView_tag;
@@ -282,12 +308,12 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
         [mainBgView addSubview:view];
     }
     
-    if (attributedtitle.length > 0) {
+    if (attributedTitle.length > 0) {
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(view.frame), CGRectGetWidth(mainBgView.frame), titleTextRect.size.height)];
         titleLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
         titleLabel.backgroundColor = [UIColor clearColor];
         titleLabel.textAlignment = NSTextAlignmentCenter;
-        titleLabel.attributedText = attributedtitle;
+        titleLabel.attributedText = attributedTitle;
         titleLabel.tag = wxy_titleLabel_tag;
         titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         titleLabel.numberOfLines = 0;
@@ -376,64 +402,145 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
 
 #pragma mark - Property Getter & Setter
 
-//wxy_titleFontSize
 - (CGFloat)wxy_titleFontSize
 {
-    return [objc_getAssociatedObject(self, @selector(wxy_titleFontSize)) floatValue];
+    NSNumber *number = objc_getAssociatedObject(self, @selector(wxy_titleFontSize));
+    if (number) {
+        return [number floatValue];
+    } else {
+        return 18.0f;
+    }
 }
 - (void)setWxy_titleFontSize:(CGFloat)wxy_titleFontSize
 {
     objc_setAssociatedObject(self, @selector(wxy_detailFontSize), @(wxy_titleFontSize), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-//wxy_titleColor
 - (UIColor *)wxy_titleColor
 {
-    return objc_getAssociatedObject(self, @selector(wxy_titleColor));
+    UIColor *color = objc_getAssociatedObject(self, @selector(wxy_titleColor));
+    
+    if (color) {
+        return objc_getAssociatedObject(self, @selector(wxy_titleColor));
+    } else {
+        return [UIColor blackColor];
+    }
 }
 - (void)setWxy_titleColor:(UIColor *)wxy_titleColor
 {
     objc_setAssociatedObject(self, @selector(wxy_titleColor), wxy_titleColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-//wxy_titleFont
 - (UIFont *)wxy_titleFont
 {
-    return objc_getAssociatedObject(self, @selector(wxy_titleFont));
+    UIFont *font = objc_getAssociatedObject(self, @selector(wxy_titleFont));
+    
+    if (font) {
+        return objc_getAssociatedObject(self, @selector(wxy_titleFont));
+    } else {
+        return [UIFont systemFontOfSize:[self wxy_titleFontSize]];
+    }
 }
 - (void)setWxy_titleFont:(UIFont *)wxy_titleFont
 {
     objc_setAssociatedObject(self, @selector(wxy_titleFont), wxy_titleFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-//wxy_detailFontSize
 - (CGFloat)wxy_detailFontSize
 {
-    return [objc_getAssociatedObject(self, @selector(wxy_detailFontSize)) floatValue];
+    NSNumber *number = objc_getAssociatedObject(self, @selector(wxy_detailFontSize));
+    if (number) {
+        return [number floatValue];
+    } else {
+        return 14.0f;
+    }
 }
 - (void)setWxy_detailFontSize:(CGFloat)wxy_detailFontSize
 {
     objc_setAssociatedObject(self, @selector(wxy_detailFontSize), @(wxy_detailFontSize), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-//wxy_detailColor
 - (UIColor *)wxy_detailColor
 {
-    return objc_getAssociatedObject(self, @selector(wxy_detailColor));
+    UIColor *color = objc_getAssociatedObject(self, @selector(wxy_detailColor));
+    
+    if (color) {
+        return objc_getAssociatedObject(self, @selector(wxy_detailColor));
+    } else {
+        return [UIColor blackColor];
+    }
 }
 - (void)setWxy_detailColor:(UIColor *)wxy_detailColor
 {
     objc_setAssociatedObject(self, @selector(wxy_detailColor), wxy_detailColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-//wxy_detailFont
 - (UIFont *)wxy_detailFont
 {
-    return objc_getAssociatedObject(self, @selector(wxy_detailFont));
+    UIFont *font = objc_getAssociatedObject(self, @selector(wxy_detailFont));
+    
+    if (font) {
+        return objc_getAssociatedObject(self, @selector(wxy_detailFont));
+    } else {
+        return [UIFont systemFontOfSize:[self wxy_detailFontSize]];
+    }
 }
 - (void)setWxy_detailFont:(UIFont *)wxy_detailFont
 {
     objc_setAssociatedObject(self, @selector(wxy_detailFont), wxy_detailFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (CGFloat)wxy_wholeVerticalOffset
+{
+    NSNumber *number = objc_getAssociatedObject(self, @selector(wxy_wholeVerticalOffset)) ;
+    if (number) {
+        return [number floatValue];
+    } else {
+        return 0.0f;
+    }
+}
+- (void)setWxy_wholeVerticalOffset:(CGFloat)wxy_wholeVerticalOffset
+{
+    objc_setAssociatedObject(self, @selector(wxy_wholeVerticalOffset), @(wxy_wholeVerticalOffset), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIEdgeInsets)wxy_wholeInsets
+{
+    NSValue *valueObj = objc_getAssociatedObject(self, @selector(wxy_wholeInsets));
+    return [valueObj UIEdgeInsetsValue];
+}
+- (void)setWxy_wholeInsets:(UIEdgeInsets)wxy_wholeInsets
+{
+    NSValue *valueObj = [NSValue valueWithUIEdgeInsets:wxy_wholeInsets];
+    objc_setAssociatedObject(self, @selector(wxy_wholeInsets), valueObj, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (CGFloat)wxy_imageToTitleSpacing
+{
+    NSNumber *number = objc_getAssociatedObject(self, @selector(wxy_imageToTitleSpacing)) ;
+    if (number) {
+        return [number floatValue];
+    } else {
+        return 0.0f;
+    }
+}
+- (void)setWxy_imageToTitleSpacing:(CGFloat)wxy_imageToTitleSpacing
+{
+    objc_setAssociatedObject(self, @selector(wxy_imageToTitleSpacing), @(wxy_imageToTitleSpacing), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (CGFloat)wxy_titleToDetailSpacing
+{
+    NSNumber *number = objc_getAssociatedObject(self, @selector(wxy_titleToDetailSpacing)) ;
+    if (number) {
+        return [number floatValue];
+    } else {
+        return 0.0f;
+    }
+}
+- (void)setWxy_titleToDetailSpacing:(CGFloat)wxy_titleToDetailSpacing
+{
+    objc_setAssociatedObject(self, @selector(wxy_titleToDetailSpacing), @(wxy_titleToDetailSpacing), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

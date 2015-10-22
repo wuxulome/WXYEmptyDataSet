@@ -10,13 +10,19 @@
 
 @interface UIScrollView (WXYEmptyDataSet)
 
-@property (nonatomic, assign) CGFloat wxy_titleFontSize;
-@property (nonatomic, strong) UIColor *wxy_titleColor;
-@property (nonatomic, strong) UIFont *wxy_titleFont;
+@property (nonatomic, assign) CGFloat  wxy_titleFontSize; //default 18
+@property (nonatomic, strong) UIColor *wxy_titleColor;    //default blackColor
+@property (nonatomic, strong) UIFont  *wxy_titleFont;     //default systemFont. PS:because this value will use 'wxy_titleFontSize' property to init, so set                    'wxy_titleFontSize' first
 
-@property (nonatomic, assign) CGFloat wxy_detailFontSize;
-@property (nonatomic, strong) UIColor *wxy_detailColor;
-@property (nonatomic, strong) UIFont *wxy_detailFont;
+@property (nonatomic, assign) CGFloat  wxy_detailFontSize;//default 14
+@property (nonatomic, strong) UIColor *wxy_detailColor;   //default blackColor
+@property (nonatomic, strong) UIFont  *wxy_detailFont;    //default systemFont. PS:because this value will use 'wxy_detailFontSize' property to init, so set 'wxy_detailFontSize' first
+
+@property (nonatomic, assign) CGFloat wxy_wholeVerticalOffset;//default backView in UIScrollView center. -↑  +↓
+@property (nonatomic, assign) UIEdgeInsets wxy_wholeInsets;//default zero. Just 'left' and 'right' is effective
+
+@property (nonatomic, assign) CGFloat wxy_imageToTitleSpacing;//default 0
+@property (nonatomic, assign) CGFloat wxy_titleToDetailSpacing;//default 0
 
 #pragma mark -
 
