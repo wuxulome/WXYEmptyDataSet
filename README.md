@@ -22,7 +22,7 @@ pod "WXYEmptyDataSet"
 
 ## Author
 
-吴旭, wuxulome@gmail.com
+wuxu, wuxulome@gmail.com
 
 ## License
 

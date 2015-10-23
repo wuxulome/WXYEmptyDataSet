@@ -2,8 +2,8 @@
 //  WXYShowStyleController.h
 //  WXYEmptyDataSet
 //
-//  Created by Lome on 15/10/22.
-//  Copyright © 2015年 吴旭. All rights reserved.
+//  Created by wuxu on 10/21/2015.
+//  Copyright (c) 2015 wuxu. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
