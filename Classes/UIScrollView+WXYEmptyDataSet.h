@@ -42,9 +42,6 @@
 - (void)wxy_setEmptyWithImage:(UIImage *)image title:(NSString *)title;
 - (void)wxy_setEmptyWithImage:(UIImage *)image title:(NSString *)title reload:(void (^)(void))reload;
 
-- (void)wxy_setEmptyWithView:(UIView *)view title:(NSString *)title;
-- (void)wxy_setEmptyWithView:(UIView *)view title:(NSString *)title reload:(void (^)(void))reload;
-
 - (void)wxy_setEmptyWithImage:(UIImage *)image title:(NSString *)title detail:(NSString *)detail;
 - (void)wxy_setEmptyWithImage:(UIImage *)image title:(NSString *)title detail:(NSString *)detail reload:(void (^)(void))reload;
 
@@ -69,9 +66,6 @@
 
 - (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title;
 - (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title reload:(void (^)(void))reload;
-
-- (void)wxy_setEmptyWithView:(UIView *)view attributedTitle:(NSAttributedString *)title;
-- (void)wxy_setEmptyWithView:(UIView *)view attributedTitle:(NSAttributedString *)title reload:(void (^)(void))reload;
 
 - (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail;
 - (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail reload:(void (^)(void))reload;

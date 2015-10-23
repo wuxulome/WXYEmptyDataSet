@@ -77,15 +77,6 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
     [self wxy_setEmptyWithImage:image title:title detail:nil reload:reload];
 }
 
-- (void)wxy_setEmptyWithView:(UIView *)view title:(NSString *)title
-{
-    [self wxy_setEmptyWithView:view title:title detail:nil reload:nil];
-}
-- (void)wxy_setEmptyWithView:(UIView *)view title:(NSString *)title reload:(void (^)(void))reload
-{
-    [self wxy_setEmptyWithView:view title:title detail:nil reload:reload];
-}
-
 - (void)wxy_setEmptyWithImage:(UIImage *)image title:(NSString *)title detail:(NSString *)detail
 {
     [self wxy_setEmptyWithImage:image title:title detail:detail reload:nil];
@@ -364,15 +355,6 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
 - (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title reload:(void (^)(void))reload
 {
     [self wxy_setEmptyWithImage:image attributedTitle:title attributedDetail:nil reload:reload];
-}
-
-- (void)wxy_setEmptyWithView:(UIView *)view attributedTitle:(NSAttributedString *)title
-{
-    [self wxy_setEmptyWithView:view attributedTitle:title attributedDetail:nil reload:nil];
-}
-- (void)wxy_setEmptyWithView:(UIView *)view attributedTitle:(NSAttributedString *)title reload:(void (^)(void))reload
-{
-    [self wxy_setEmptyWithView:view attributedTitle:title attributedDetail:nil reload:reload];
 }
 
 - (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail
