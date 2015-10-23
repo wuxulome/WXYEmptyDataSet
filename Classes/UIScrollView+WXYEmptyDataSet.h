@@ -18,11 +18,11 @@
 @property (nonatomic, strong) UIColor *wxy_detailColor;   //default blackColor
 @property (nonatomic, strong) UIFont  *wxy_detailFont;    //default systemFont. PS:because this value will use 'wxy_detailFontSize' property to init, so set 'wxy_detailFontSize' first
 
-@property (nonatomic, assign) CGFloat wxy_wholeVerticalOffset;//default backView in UIScrollView center. -↑  +↓
-@property (nonatomic, assign) UIEdgeInsets wxy_wholeInsets;//default zero. Just 'left' and 'right' is effective
+@property (nonatomic, assign) CGFloat wxy_wholeVerticalOffset;  //default backView in UIScrollView center. -↑  +↓
+@property (nonatomic, assign) UIEdgeInsets wxy_wholeInsets;     //default zero. Just 'left' and 'right' is effective
 
-@property (nonatomic, assign) CGFloat wxy_imageToUnderGroupSpacing;//default 0
-@property (nonatomic, assign) CGFloat wxy_titleToUnderGroupSpacing;//default 0
+@property (nonatomic, assign) CGFloat wxy_imageToUnderGroupSpacing; //default 0
+@property (nonatomic, assign) CGFloat wxy_titleToUnderGroupSpacing; //default 0
 @property (nonatomic, assign) CGFloat wxy_detailToUnderGroupSpacing;//default 0
 
 #pragma mark -

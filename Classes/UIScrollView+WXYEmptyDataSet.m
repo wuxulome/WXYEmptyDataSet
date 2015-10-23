@@ -101,96 +101,7 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
 }
 - (void)wxy_setEmptyWithView:(UIView *)view title:(NSString *)title detail:(NSString *)detail reload:(void (^)(void))reload
 {
-    [self wxy_clearBackground];
-    
-    CGFloat height = 0;
-    
-    if (view) {
-        height += CGRectGetHeight(view.frame);
-        
-        if (title.length > 0 || detail.length > 0) {
-            height += [self wxy_imageToUnderGroupSpacing];
-        }
-    }
-    
-    CGSize titleTextSize;
-    if (title.length > 0) {
-        titleTextSize = [title sizeWithFont:[UIFont systemFontOfSize:[self wxy_titleFontSize]]
-                          constrainedToSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT)
-                              lineBreakMode:NSLineBreakByWordWrapping];
-        height += titleTextSize.height;
-        
-        if (detail.length > 0) {
-            height += [self wxy_titleToUnderGroupSpacing];
-        }
-    }
-    
-    CGSize detailTextSize;
-    if (detail.length > 0) {
-        detailTextSize = [detail sizeWithFont:[UIFont systemFontOfSize:[self wxy_detailFontSize]]
-                                   constrainedToSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT)
-                                       lineBreakMode:NSLineBreakByWordWrapping];
-        height += detailTextSize.height;
-    }
-    
-    UIView *mainBgView = [[UIView alloc] initWithFrame:CGRectMake([self wxy_wholeInsets].left,
-                                                                  (CGRectGetHeight(self.frame) - height)/2 + [self wxy_wholeVerticalOffset],
-                                                                  CGRectGetWidth(self.frame) - [self wxy_wholeInsets].left - [self wxy_wholeInsets].right,
-                                                                  height)];
-    mainBgView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
-    mainBgView.backgroundColor = [UIColor clearColor];
-    mainBgView.tag = wxy_mainBgView_tag;
-    [self addSubview:mainBgView];
-    
-    CGFloat y = 0;
-    
-    if (view) {
-        view.frame = CGRectMake((CGRectGetWidth(mainBgView.frame) - CGRectGetWidth(view.frame))/2, y, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame));
-        view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-        [mainBgView addSubview:view];
-        
-        y += CGRectGetMaxY(view.frame);
-        y += [self wxy_imageToUnderGroupSpacing];
-    }
-    
-    if (title.length > 0) {
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, y, CGRectGetWidth(mainBgView.frame), titleTextSize.height)];
-        titleLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
-        titleLabel.backgroundColor = [UIColor clearColor];
-        titleLabel.textAlignment = NSTextAlignmentCenter;
-        titleLabel.font = [self wxy_titleFont];
-        titleLabel.textColor = [self wxy_titleColor];
-        titleLabel.text = title;
-        titleLabel.tag = wxy_titleLabel_tag;
-        titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        titleLabel.numberOfLines = 0;
-        [mainBgView addSubview:titleLabel];
-        
-        y += CGRectGetMaxY(titleLabel.frame);
-        y += [self wxy_titleToUnderGroupSpacing];
-    }
-    
-    if (detail.length > 0) {
-        UILabel *detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, y, CGRectGetWidth(mainBgView.frame), detailTextSize.height)];
-        detailLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
-        detailLabel.backgroundColor = [UIColor clearColor];
-        detailLabel.textAlignment = NSTextAlignmentCenter;
-        detailLabel.font = [self wxy_detailFont];
-        detailLabel.textColor = [self wxy_detailColor];
-        detailLabel.text = detail;
-        detailLabel.tag = wxy_detailLabel_tag;
-        detailLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        detailLabel.numberOfLines = 0;
-        [mainBgView addSubview:detailLabel];
-    }
-    
-    if (reload) {
-        objc_setAssociatedObject(self, wxy_reloadBlockKey, reload, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(wxy_retry:)];
-        tapRecognizer.cancelsTouchesInView = NO;
-        [mainBgView addGestureRecognizer:tapRecognizer];
-        objc_setAssociatedObject(self, wxy_gestureRecognizerKey, tapRecognizer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
+    [self wxy_setEmptyWithView:view title:title detail:detail button:nil reload:reload];
 }
 
 - (void)wxy_setEmptyWithButton:(UIButton *)button
@@ -227,6 +138,158 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
     }
 }
 - (void)wxy_setEmptyWithView:(UIView *)view title:(NSString *)title detail:(NSString *)detail button:(UIButton *)button
+{
+    [self wxy_setEmptyWithView:view title:title detail:detail button:button reload:nil];
+}
+
+#pragma mark -
+
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)title
+{
+    [self wxy_setEmptyWithView:nil attributedTitle:title attributedDetail:nil reload:nil];
+}
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)title reload:(void (^)(void))reload
+{
+    [self wxy_setEmptyWithView:nil attributedTitle:title attributedDetail:nil reload:reload];
+}
+
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail
+{
+    [self wxy_setEmptyWithView:nil attributedTitle:title attributedDetail:detail reload:nil];
+}
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail reload:(void (^)(void))reload
+{
+    [self wxy_setEmptyWithView:nil attributedTitle:title attributedDetail:detail reload:reload];
+}
+
+- (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title
+{
+    [self wxy_setEmptyWithImage:image attributedTitle:title attributedDetail:nil reload:nil];
+}
+- (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title reload:(void (^)(void))reload
+{
+    [self wxy_setEmptyWithImage:image attributedTitle:title attributedDetail:nil reload:reload];
+}
+
+- (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail
+{
+    [self wxy_setEmptyWithImage:image attributedTitle:title attributedDetail:detail reload:nil];
+}
+- (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail reload:(void (^)(void))reload
+{
+    if (image) {
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        imageView.backgroundColor = [UIColor clearColor];
+        
+        [self wxy_setEmptyWithView:imageView attributedTitle:title attributedDetail:detail reload:reload];
+    } else {
+        [self wxy_setEmptyWithView:nil attributedTitle:title attributedDetail:detail reload:reload];
+    }
+}
+
+- (void)wxy_setEmptyWithView:(UIView *)view attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail
+{
+    [self wxy_setEmptyWithView:view attributedTitle:title attributedDetail:detail reload:nil];
+}
+- (void)wxy_setEmptyWithView:(UIView *)view attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail reload:(void (^)(void))reload
+{
+    [self wxy_setEmptyWithView:view attributedTitle:title attributedDetail:detail button:nil reload:reload];
+}
+
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)title button:(UIButton *)button
+{
+    [self wxy_setEmptyWithView:nil attributedTitle:nil attributedDetail:nil button:button];
+}
+- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail button:(UIButton *)button
+{
+    [self wxy_setEmptyWithView:nil attributedTitle:title attributedDetail:nil button:button];
+}
+- (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title button:(UIButton *)button
+{
+    [self wxy_setEmptyWithView:nil attributedTitle:title attributedDetail:nil button:button];
+}
+- (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail button:(UIButton *)button
+{
+    if (image) {
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        imageView.backgroundColor = [UIColor clearColor];
+        
+        [self wxy_setEmptyWithView:imageView attributedTitle:title attributedDetail:detail button:button];
+    } else {
+        [self wxy_setEmptyWithView:nil attributedTitle:title attributedDetail:detail button:button];
+    }
+}
+- (void)wxy_setEmptyWithView:(UIView *)view attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail button:(UIButton *)button
+{
+    [self wxy_setEmptyWithView:view attributedTitle:title attributedDetail:detail button:button reload:nil];
+}
+
+#pragma mark -
+
+- (BOOL)wxy_startReload
+{
+    void(^block)() = objc_getAssociatedObject(self, wxy_reloadBlockKey);
+    if (block) {
+        [self wxy_retry:nil];
+        return YES;
+    }
+    return NO;
+}
+
+- (void)wxy_clearBackground
+{
+    UIView *mainBgView = [self viewWithTag:wxy_mainBgView_tag];
+    if (mainBgView) {
+        [mainBgView removeFromSuperview];
+    }
+    
+    UIActivityIndicatorView *activityView = (UIActivityIndicatorView *) [self viewWithTag:wxy_indicatorView_tag];
+    if (activityView) {
+        [activityView stopAnimating];
+        [activityView removeFromSuperview];
+    }
+    
+    id block = objc_getAssociatedObject(self, wxy_reloadBlockKey);
+    if (block) {
+        objc_setAssociatedObject(self, wxy_reloadBlockKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    block = nil;
+    
+    UIGestureRecognizer *recognizer = objc_getAssociatedObject(self, wxy_gestureRecognizerKey);
+    if (recognizer) {
+        [self removeGestureRecognizer:recognizer];
+        objc_setAssociatedObject(self, wxy_gestureRecognizerKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    recognizer = nil;
+}
+
+#pragma mark - retry
+
+- (void)wxy_retry:(UIGestureRecognizer *)gestureRecognizer
+{
+    void(^block)() = objc_getAssociatedObject(self, wxy_reloadBlockKey);
+    if (block) {
+        UIView *mainBgView = [self viewWithTag:wxy_mainBgView_tag];
+        [mainBgView removeFromSuperview];
+        UIActivityIndicatorView *activityView = (UIActivityIndicatorView *)[self viewWithTag:wxy_indicatorView_tag];
+        if (!activityView) {
+            activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            activityView.tag = wxy_indicatorView_tag;
+        }
+        activityView.frame = CGRectMake((CGRectGetWidth(self.frame) - 30) / 2,(CGRectGetHeight(self.frame) - 30) / 2, 30, 30);
+        [self addSubview:activityView];
+        [activityView startAnimating];
+        block();
+    }
+}
+
+#pragma mark - private root method
+
+- (void)wxy_setEmptyWithView:(UIView *)view title:(NSString *)title detail:(NSString *)detail button:(UIButton *)button reload:(void (^)(void))reload
 {
     [self wxy_clearBackground];
     
@@ -326,139 +389,6 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
         button.frame = CGRectMake((CGRectGetWidth(mainBgView.frame) - CGRectGetWidth(button.frame))/2, y, CGRectGetWidth(button.frame), CGRectGetHeight(button.frame));
         [mainBgView addSubview:button];
     }
-}
-
-#pragma mark -
-
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)title
-{
-    [self wxy_setEmptyWithView:nil attributedTitle:title attributedDetail:nil reload:nil];
-}
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)title reload:(void (^)(void))reload
-{
-    [self wxy_setEmptyWithView:nil attributedTitle:title attributedDetail:nil reload:reload];
-}
-
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail
-{
-    [self wxy_setEmptyWithView:nil attributedTitle:title attributedDetail:detail reload:nil];
-}
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail reload:(void (^)(void))reload
-{
-    [self wxy_setEmptyWithView:nil attributedTitle:title attributedDetail:detail reload:reload];
-}
-
-- (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title
-{
-    [self wxy_setEmptyWithImage:image attributedTitle:title attributedDetail:nil reload:nil];
-}
-- (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title reload:(void (^)(void))reload
-{
-    [self wxy_setEmptyWithImage:image attributedTitle:title attributedDetail:nil reload:reload];
-}
-
-- (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail
-{
-    [self wxy_setEmptyWithImage:image attributedTitle:title attributedDetail:detail reload:nil];
-}
-- (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail reload:(void (^)(void))reload
-{
-    if (image) {
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-        imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
-        imageView.backgroundColor = [UIColor clearColor];
-        
-        [self wxy_setEmptyWithView:imageView attributedTitle:title attributedDetail:detail reload:reload];
-    } else {
-        [self wxy_setEmptyWithView:nil attributedTitle:title attributedDetail:detail reload:reload];
-    }
-}
-
-- (void)wxy_setEmptyWithView:(UIView *)view attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail
-{
-    [self wxy_setEmptyWithView:view attributedTitle:title attributedDetail:detail reload:nil];
-}
-- (void)wxy_setEmptyWithView:(UIView *)view attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail reload:(void (^)(void))reload
-{
-    [self wxy_clearBackground];
-    
-    CGFloat height = 0;
-    
-    if (view) {
-        height += CGRectGetHeight(view.frame);
-        
-        if (title.length > 0 || detail.length > 0) {
-            height += [self wxy_imageToUnderGroupSpacing];
-        }
-    }
-    
-    CGRect titleTextRect;
-    if (title.length > 0) {
-        titleTextRect = [title boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT)
-                                                      options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-                                                      context:nil];
-        height += titleTextRect.size.height;
-        
-        if (detail.length > 0) {
-            height += [self wxy_titleToUnderGroupSpacing];
-        }
-    }
-    
-    CGRect detailTextRect;
-    if (detail.length > 0) {
-        detailTextRect = [detail boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT)
-                                                        options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-                                                        context:nil];
-        height += detailTextRect.size.height;
-    }
-    
-    UIView *mainBgView = [[UIView alloc] initWithFrame:CGRectMake([self wxy_wholeInsets].left,
-                                                                  (CGRectGetHeight(self.frame) - height)/2 + [self wxy_wholeVerticalOffset],
-                                                                  CGRectGetWidth(self.frame) - [self wxy_wholeInsets].left - [self wxy_wholeInsets].right,
-                                                                  height)];
-    mainBgView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
-    mainBgView.backgroundColor = [UIColor clearColor];
-    mainBgView.tag = wxy_mainBgView_tag;
-    [self addSubview:mainBgView];
-    
-    CGFloat y = 0;
-    
-    if (view) {
-        view.frame = CGRectMake((CGRectGetWidth(mainBgView.frame) - CGRectGetWidth(view.frame))/2, y, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame));
-        view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-        [mainBgView addSubview:view];
-        
-        y += CGRectGetMaxY(view.frame);
-        y += [self wxy_imageToUnderGroupSpacing];
-    }
-    
-    if (title.length > 0) {
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, y, CGRectGetWidth(mainBgView.frame), titleTextRect.size.height)];
-        titleLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
-        titleLabel.backgroundColor = [UIColor clearColor];
-        titleLabel.textAlignment = NSTextAlignmentCenter;
-        titleLabel.attributedText = title;
-        titleLabel.tag = wxy_titleLabel_tag;
-        titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        titleLabel.numberOfLines = 0;
-        [mainBgView addSubview:titleLabel];
-        
-        y += CGRectGetMaxY(titleLabel.frame);
-        y += [self wxy_titleToUnderGroupSpacing];
-    }
-    
-    if (detail.length > 0) {
-        UILabel *detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, y, CGRectGetWidth(mainBgView.frame), detailTextRect.size.height)];
-        detailLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
-        detailLabel.backgroundColor = [UIColor clearColor];
-        detailLabel.textAlignment = NSTextAlignmentCenter;
-        detailLabel.attributedText = detail;
-        detailLabel.tag = wxy_detailLabel_tag;
-        detailLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        detailLabel.numberOfLines = 0;
-        [mainBgView addSubview:detailLabel];
-    }
     
     if (reload) {
         objc_setAssociatedObject(self, wxy_reloadBlockKey, reload, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -469,32 +399,7 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
     }
 }
 
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)title button:(UIButton *)button
-{
-    [self wxy_setEmptyWithView:nil attributedTitle:nil attributedDetail:nil button:button];
-}
-- (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail button:(UIButton *)button
-{
-    [self wxy_setEmptyWithView:nil attributedTitle:title attributedDetail:nil button:button];
-}
-- (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title button:(UIButton *)button
-{
-    [self wxy_setEmptyWithView:nil attributedTitle:title attributedDetail:nil button:button];
-}
-- (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail button:(UIButton *)button
-{
-    if (image) {
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-        imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
-        imageView.backgroundColor = [UIColor clearColor];
-        
-        [self wxy_setEmptyWithView:imageView attributedTitle:title attributedDetail:detail button:button];
-    } else {
-        [self wxy_setEmptyWithView:nil attributedTitle:title attributedDetail:detail button:button];
-    }
-}
-- (void)wxy_setEmptyWithView:(UIView *)view attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail button:(UIButton *)button
+- (void)wxy_setEmptyWithView:(UIView *)view attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail button:(UIButton *)button reload:(void (^)(void))reload
 {
     [self wxy_clearBackground];
     
@@ -582,65 +487,14 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
         button.frame = CGRectMake((CGRectGetWidth(mainBgView.frame) - CGRectGetWidth(button.frame))/2, y, CGRectGetWidth(button.frame), CGRectGetHeight(button.frame));
         [mainBgView addSubview:button];
     }
-}
-
-#pragma mark - 点击重试响应
-
-- (void)wxy_retry:(UIGestureRecognizer *)gestureRecognizer
-{
-    void(^block)() = objc_getAssociatedObject(self, wxy_reloadBlockKey);
-    if (block) {
-        UIView *mainBgView = [self viewWithTag:wxy_mainBgView_tag];
-        [mainBgView removeFromSuperview];
-        UIActivityIndicatorView *activityView = (UIActivityIndicatorView *)[self viewWithTag:wxy_indicatorView_tag];
-        if (!activityView) {
-            activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-            activityView.tag = wxy_indicatorView_tag;
-        }
-        activityView.frame = CGRectMake((CGRectGetWidth(self.frame) - 30) / 2,(CGRectGetHeight(self.frame) - 30) / 2, 30, 30);
-        [self addSubview:activityView];
-        [activityView startAnimating];
-        block();
-    }
-}
-
-#pragma mark -
-
-- (BOOL)wxy_startReload
-{
-    void(^block)() = objc_getAssociatedObject(self, wxy_reloadBlockKey);
-    if (block) {
-        [self wxy_retry:nil];
-        return YES;
-    }
-    return NO;
-}
-
-- (void)wxy_clearBackground
-{
-    UIView *mainBgView = [self viewWithTag:wxy_mainBgView_tag];
-    if (mainBgView) {
-        [mainBgView removeFromSuperview];
-    }
     
-    UIActivityIndicatorView *activityView = (UIActivityIndicatorView *) [self viewWithTag:wxy_indicatorView_tag];
-    if (activityView) {
-        [activityView stopAnimating];
-        [activityView removeFromSuperview];
+    if (reload) {
+        objc_setAssociatedObject(self, wxy_reloadBlockKey, reload, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(wxy_retry:)];
+        tapRecognizer.cancelsTouchesInView = NO;
+        [mainBgView addGestureRecognizer:tapRecognizer];
+        objc_setAssociatedObject(self, wxy_gestureRecognizerKey, tapRecognizer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    
-    id block = objc_getAssociatedObject(self, wxy_reloadBlockKey);
-    if (block) {
-        objc_setAssociatedObject(self, wxy_reloadBlockKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-    block = nil;
-    
-    UIGestureRecognizer *recognizer = objc_getAssociatedObject(self, wxy_gestureRecognizerKey);
-    if (recognizer) {
-        [self removeGestureRecognizer:recognizer];
-        objc_setAssociatedObject(self, wxy_gestureRecognizerKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-    recognizer = nil;
 }
 
 #pragma mark - Property Getter & Setter
