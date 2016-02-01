@@ -7,6 +7,4 @@ end
 
 target 'WXYEmptyDataSet_Tests', :exclusive => true do
   pod "WXYEmptyDataSet", :path => "../"
-
-  pod 'FBSnapshotTestCase'
 end

@@ -1,15 +1,15 @@
 {
   "name": "WXYEmptyDataSet",
   "version": "0.1.0",
-  "summary": "A short description of WXYEmptyDataSet.",
-  "description": "",
+  "summary": "A UIScrollView superclass category for showing empty or error background.",
+  "description": "In network callback, you want to set background with different code. Use WXYEmptyDataSet pods, you can easily do this.And we also open some property for customization. My English is not good. So, this's all.",
   "homepage": "https://github.com/wuxulome/WXYEmptyDataSet",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "吴旭": "wuxulome@gmail.com"
+    "wuxu": "wuxulome@gmail.com"
   },
   "source": {
     "git": "https://github.com/wuxulome/WXYEmptyDataSet.git",
@@ -19,6 +19,6 @@
     "ios": "6.0"
   },
   "requires_arc": true,
-  "source_files": "Classes/*.{h,m}",
+  "source_files": "WXYEmptyDataSet/*.{h,m}",
   "frameworks": "UIKit"
 }

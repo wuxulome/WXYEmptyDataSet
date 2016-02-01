@@ -10,13 +10,11 @@
 
 @interface UIScrollView (WXYEmptyDataSet)
 
-@property (nonatomic, assign) CGFloat  wxy_titleFontSize; //default 18
 @property (nonatomic, strong) UIColor *wxy_titleColor;    //default blackColor
-@property (nonatomic, strong) UIFont  *wxy_titleFont;     //default systemFont. PS:because this value will use 'wxy_titleFontSize' property to init, so set                    'wxy_titleFontSize' first
+@property (nonatomic, strong) UIFont  *wxy_titleFont;     //default [UIFont systemFontOfSize:18]
 
-@property (nonatomic, assign) CGFloat  wxy_detailFontSize;//default 14
 @property (nonatomic, strong) UIColor *wxy_detailColor;   //default blackColor
-@property (nonatomic, strong) UIFont  *wxy_detailFont;    //default systemFont. PS:because this value will use 'wxy_detailFontSize' property to init, so set 'wxy_detailFontSize' first
+@property (nonatomic, strong) UIFont  *wxy_detailFont;    //default [UIFont systemFontOfSize:14]
 
 @property (nonatomic, assign) CGFloat wxy_wholeVerticalOffset;  //default backView in UIScrollView center. -↑  +↓
 @property (nonatomic, assign) UIEdgeInsets wxy_wholeInsets;     //default zero. Just 'left' and 'right' is effective
@@ -25,7 +23,7 @@
 @property (nonatomic, assign) CGFloat wxy_titleToUnderGroupSpacing; //default 0
 @property (nonatomic, assign) CGFloat wxy_detailToUnderGroupSpacing;//default 0
 
-#pragma mark -
+#pragma mark - NSString
 
 - (void)wxy_setEmptyWithTitle:(NSString *)title;
 - (void)wxy_setEmptyWithTitle:(NSString *)title reload:(void (^)(void))reload;
@@ -56,7 +54,7 @@
 - (void)wxy_setEmptyWithImage:(UIImage *)image title:(NSString *)title detail:(NSString *)detail button:(UIButton *)button;
 - (void)wxy_setEmptyWithView:(UIView *)view title:(NSString *)title detail:(NSString *)detail button:(UIButton *)button;
 
-#pragma mark -
+#pragma mark - NSAttributedString
 
 - (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)title;
 - (void)wxy_setEmptyWithAttributedTitle:(NSAttributedString *)title reload:(void (^)(void))reload;
@@ -79,7 +77,7 @@
 - (void)wxy_setEmptyWithImage:(UIImage *)image attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail button:(UIButton *)button;
 - (void)wxy_setEmptyWithView:(UIView *)view attributedTitle:(NSAttributedString *)title attributedDetail:(NSAttributedString *)detail button:(UIButton *)button;
 
-#pragma mark -
+#pragma mark - Other
 
 - (BOOL)wxy_startReload;
 

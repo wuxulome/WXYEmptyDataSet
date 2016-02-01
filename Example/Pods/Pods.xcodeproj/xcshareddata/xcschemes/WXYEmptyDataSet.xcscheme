@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B9AA4EFFAE8BDF83CB565210"
+               BlueprintIdentifier = "07D8B49E0FA81846791B165C"
                BuildableName = "WXYEmptyDataSet.framework"
                BlueprintName = "WXYEmptyDataSet"
                ReferencedContainer = "container:Pods.xcodeproj">

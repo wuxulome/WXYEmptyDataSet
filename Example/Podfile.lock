@@ -1,9 +1,7 @@
 PODS:
-  - FBSnapshotTestCase (1.6)
   - WXYEmptyDataSet (0.1.0)
 
 DEPENDENCIES:
-  - FBSnapshotTestCase
   - WXYEmptyDataSet (from `../`)
 
 EXTERNAL SOURCES:
@@ -11,7 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: 9d5fe43b29ae3a0ed8fc829477971b281038f748
-  WXYEmptyDataSet: e6c10e125e92acee304e29efbf99ecbe784c811c
+  WXYEmptyDataSet: 0bab6bc7cd866b5f5a473eb90a3d4f3e300c6c88
 
 COCOAPODS: 0.38.2

@@ -20,10 +20,8 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
 @implementation UIScrollView (WXYEmptyDataSet)
 @dynamic wxy_titleFont;
 @dynamic wxy_titleColor;
-@dynamic wxy_titleFontSize;
 @dynamic wxy_detailFont;
 @dynamic wxy_detailColor;
-@dynamic wxy_detailFontSize;
 @dynamic wxy_wholeVerticalOffset;
 @dynamic wxy_wholeInsets;
 @dynamic wxy_imageToUnderGroupSpacing;
@@ -305,7 +303,7 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
     
     CGSize titleTextSize;
     if (title.length > 0) {
-        titleTextSize = [title sizeWithFont:[UIFont systemFontOfSize:[self wxy_titleFontSize]]
+        titleTextSize = [title sizeWithFont:[self wxy_titleFont]
                           constrainedToSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT)
                               lineBreakMode:NSLineBreakByWordWrapping];
         height += titleTextSize.height;
@@ -317,7 +315,7 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
     
     CGSize detailTextSize;
     if (detail.length > 0) {
-        detailTextSize = [detail sizeWithFont:[UIFont systemFontOfSize:[self wxy_detailFontSize]]
+        detailTextSize = [detail sizeWithFont:[self wxy_detailFont]
                             constrainedToSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT)
                                 lineBreakMode:NSLineBreakByWordWrapping];
         height += detailTextSize.height;
@@ -499,20 +497,6 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
 
 #pragma mark - Property Getter & Setter
 
-- (CGFloat)wxy_titleFontSize
-{
-    NSNumber *number = objc_getAssociatedObject(self, @selector(wxy_titleFontSize));
-    if (number) {
-        return [number floatValue];
-    } else {
-        return 18.0f;
-    }
-}
-- (void)setWxy_titleFontSize:(CGFloat)wxy_titleFontSize
-{
-    objc_setAssociatedObject(self, @selector(wxy_detailFontSize), @(wxy_titleFontSize), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
 - (UIColor *)wxy_titleColor
 {
     UIColor *color = objc_getAssociatedObject(self, @selector(wxy_titleColor));
@@ -535,26 +519,12 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
     if (font) {
         return objc_getAssociatedObject(self, @selector(wxy_titleFont));
     } else {
-        return [UIFont systemFontOfSize:[self wxy_titleFontSize]];
+        return [UIFont systemFontOfSize:18];
     }
 }
 - (void)setWxy_titleFont:(UIFont *)wxy_titleFont
 {
     objc_setAssociatedObject(self, @selector(wxy_titleFont), wxy_titleFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (CGFloat)wxy_detailFontSize
-{
-    NSNumber *number = objc_getAssociatedObject(self, @selector(wxy_detailFontSize));
-    if (number) {
-        return [number floatValue];
-    } else {
-        return 14.0f;
-    }
-}
-- (void)setWxy_detailFontSize:(CGFloat)wxy_detailFontSize
-{
-    objc_setAssociatedObject(self, @selector(wxy_detailFontSize), @(wxy_detailFontSize), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (UIColor *)wxy_detailColor
@@ -579,7 +549,7 @@ static char const *const wxy_gestureRecognizerKey = "wxy_gestureRecognizerKey";
     if (font) {
         return objc_getAssociatedObject(self, @selector(wxy_detailFont));
     } else {
-        return [UIFont systemFontOfSize:[self wxy_detailFontSize]];
+        return [UIFont systemFontOfSize:14];
     }
 }
 - (void)setWxy_detailFont:(UIFont *)wxy_detailFont
